@@ -1,14 +1,21 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
+// 하단 네비게이터
 import Navigator from '../Navigator';
+
+import data from '../Data/CollectionData';
+import Collection from './Collection';
+// 화면에서 사용되는 이미지
 import Seoul from '../../images/seoul.png';
 import Write from '../../images/Write.png';
 import Location from '../../images/Location.png';
 import Like from '../../images/heart.png';
 import Exit from '../../images/logout.png';
 import Sun from '../../images/sun.png';
+import Search from '../../images/search.png';
 import Dialog from './Dialog';
 
+// margin 상 우 하 좌 = > 기억하기!
 const MainPageBlock = styled.div`
   width: 360px;
   height: 760px;
@@ -53,10 +60,17 @@ const BackBtn = styled.button`
 `;
 
 const SearchBtn = styled.button`
-  width: 24px;
-  height: 24px;
-  margin: 2% 0% 0% 35%;
-  object-fit: contain;
+  background: white;
+  border: none;
+  outline:none;
+  margin: 0% 0% 2.7% 30%;
+  img. SearchBtn {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    background-color: #f6e24b;
 `;
 
 const HeadText = styled.div`
@@ -117,6 +131,7 @@ const InfoHead = styled.div`
 const LocationBtn = styled.button`
   background: white;
   border: none;
+  outline:none;
   margin: 0% 0% 0% 38%;
   img. LocationBtn {
     vertical-align: middle;
@@ -131,6 +146,7 @@ const LocationBtn = styled.button`
 const WriteBtn = styled.button`
   background: white;
   border: none;
+  outline:none;
   img. WriteBtn {
     vertical-align: middle;
     display: inline-block;
@@ -184,6 +200,7 @@ const BtnsDiv = styled.div`
 const LikeBtn = styled.button`
   background: white;
   border: none;
+  outline:none;
   margin: 0% 0% 0% 7%;
   img. LikeBtn {
     vertical-align: middle;
@@ -196,6 +213,7 @@ const LikeBtn = styled.button`
 const ExitBtn = styled.button`
   background: white;
   border: none;
+  outline:none;
   img. ExitBtn {
     vertical-align: middle;
     display: inline-block;
@@ -204,8 +222,13 @@ const ExitBtn = styled.button`
     margin: 0 auto;
     background-color: #f6e24b;
 `;
+// margin 상 우 하 좌 = > 기억하기!
+const ItemDiv = styled.div`
+  margin: 4% 0% 0% 15%;
+`;
 
 function MainPage() {
+  const [item, setItem] = useState(data);
   const [isOpen, setOpen] = useState(false);
   const modalEl = useRef(null);
 
@@ -226,7 +249,9 @@ function MainPage() {
       <HeadBlock>
         <BackBtn></BackBtn>
         <HeadText>기록 보기</HeadText>
-        <SearchBtn></SearchBtn>
+        <SearchBtn>
+          <img src={Search} alt="SearchBtn" className="SearchBtn" />
+        </SearchBtn>
       </HeadBlock>
       <Background>
         <ImageDiv>
@@ -271,6 +296,11 @@ function MainPage() {
               <img src={Exit} alt="ExitBtn" className="ExitBtn" />
             </ExitBtn>
           </BtnsDiv>
+          <ItemDiv>
+            {item.slice(0, 4).map((a, i) => {
+              return <Collection item={item[i]} i={i} key={i} />;
+            })}
+          </ItemDiv>
         </InfoDiv>
       </Background>
       <Navigator />
