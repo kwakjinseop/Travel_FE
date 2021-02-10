@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Navigator from '../Navigator';
 import Seoul from '../../images/seoul.png';
 import Write from '../../images/Write.png';
 import Location from '../../images/Location.png';
-import Logout from '../../images/logout.png';
+import Like from '../../images/heart.png';
+import Exit from '../../images/logout.png';
 import Sun from '../../images/sun.png';
+import Dialog from './Dialog';
 
 const MainPageBlock = styled.div`
   width: 360px;
@@ -88,7 +90,7 @@ const ImageDiv = styled.div`
     height: 350px;
     position: absolute;
     margin: 0 auto;
-    background-color: #f6e24b;
+    background-color: white;
   }
 `;
 
@@ -156,7 +158,7 @@ const InfoCat = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin: 2% 4% 0% 0%;
+  margin: 2% 16% 0% 0%;
   justify-content: space-evenly;
   span {
     font-size: 13px;
@@ -167,7 +169,7 @@ const InfoData = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin: 1% 3% 0% 0%;
+  margin: 1.5% 14% 0% 0%;
   justify-content: space-evenly;
   h1 {
     margin: 0% 0% 0% 0%;
@@ -175,7 +177,50 @@ const InfoData = styled.div`
   }
 `;
 
+const BtnsDiv = styled.div`
+  display: flex;
+`;
+
+const LikeBtn = styled.button`
+  background: white;
+  border: none;
+  margin: 0% 0% 0% 7%;
+  img. LikeBtn {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    background-color: #f6e24b;
+`;
+const ExitBtn = styled.button`
+  background: white;
+  border: none;
+  img. ExitBtn {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    background-color: #f6e24b;
+`;
+
 function MainPage() {
+  const [isOpen, setOpen] = useState(false);
+  const modalEl = useRef(null);
+
+  const handleClickOutside = ({ target }) => {
+    if (isOpen && (!modalEl.current || !modalEl.current.contains(target))) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
   return (
     <MainPageBlock>
       <HeadBlock>
@@ -191,7 +236,8 @@ function MainPage() {
           {/* 인포 헤드 :  서울, 버튼 2개 */}
           <InfoHead>
             <h5>Seoul</h5>
-            <LocationBtn>
+            <LocationBtn onClick={() => setOpen(true)}>
+              {isOpen && <Dialog innerref={modalEl} />}
               <img src={Location} alt="locationBtn" className="LocationBtn" />
             </LocationBtn>
             <WriteBtn>
@@ -217,6 +263,14 @@ function MainPage() {
               <img src={Sun} alt="Sun" />
             </span>
           </InfoData>
+          <BtnsDiv>
+            <LikeBtn>
+              <img src={Like} alt="LikeBtn" className="LikeBtn" />
+            </LikeBtn>
+            <ExitBtn>
+              <img src={Exit} alt="ExitBtn" className="ExitBtn" />
+            </ExitBtn>
+          </BtnsDiv>
         </InfoDiv>
       </Background>
       <Navigator />
