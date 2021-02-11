@@ -77,7 +77,7 @@ const HeadText = styled.div`
   width: 57px;
   height: 19px;
   margin: 3% 0% 1% 33%;
-  font-family: Roboto;
+  font-family: 'Noto Sans KR';
   font-size: 16spx;
   font-weight: normal;
   font-stretch: normal;
