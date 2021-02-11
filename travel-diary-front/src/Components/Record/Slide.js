@@ -6,7 +6,7 @@ const IMG = styled.img`
     height: 30vh;
 `;
 
-function Slide({img}) {
+function Slide({ img }) {
     return (
         <IMG src={img} />
     );

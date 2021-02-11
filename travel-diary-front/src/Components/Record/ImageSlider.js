@@ -1,10 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
+import Slide from './Slide';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slide from './Slide';
 import Seoul from '../../images/seoul.png';
-import styled from 'styled-components';
 
 const items = [
     { id: 1, src: Seoul },
