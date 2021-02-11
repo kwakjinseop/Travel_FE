@@ -46,14 +46,13 @@ const DialogBlock = styled.div`
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  font-family: 'Noto Sans KR';
 
-  h3 {
-    font-family: 'Noto Sans KR';
+  h4 {
     margin: 0;
   }
-
   h5 {
-    font-family: 'Noto Sans KR';
+      font-weight: 500;
   }
   animation-duration: 0.25s;
   animation-timing-function: ease-out;
@@ -73,19 +72,27 @@ const ButtonGroup = styled.div`
         width: 40%;
         font-family: 'Noto Sans KR';
         background-color: white;
+        color: gray;
         cursor: pointer;
+        &:hover {
+            color: skyblue;
+        }
     }
 `;
 
 const CompleteButton = styled.button`
     display: outline;
-    flex: 1;
     margin: 0;
     border: 0;
     outline: 0;
+    margin-top: 4%;
     font-family: 'Noto Sans KR';
     background-color: white;
+    color: gray;
     cursor: pointer;
+    &:hover {
+            color: skyblue;
+    }
 `;
 
 
@@ -94,7 +101,7 @@ function RecordDialog({ children, complete, visible, onConfirm, onCancel }) {
     return (
         <DarkBackground>
             <DialogBlock>
-                <h3>알림</h3>
+                <h4>알림</h4>
                 <h5>{children}</h5>
                 { complete === 'false' ? <ButtonGroup><button onClick={onCancel}>아니오</button><button onClick={onConfirm}>네</button></ButtonGroup> : <CompleteButton onClick={onConfirm}>확인</CompleteButton>}
             </DialogBlock>

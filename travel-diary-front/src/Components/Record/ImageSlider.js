@@ -5,12 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Seoul from '../../images/seoul.png';
 
-const items = [
-    { id: 1, src: Seoul },
-    { id: 2, src: Seoul },
-    { id: 3, src: Seoul },
-];
-
 function ImageSlider() {
     const settings = {
         dots: true,
@@ -21,7 +15,13 @@ function ImageSlider() {
         arrows: false,
         centerMode: true
     };
-      
+    
+    const items = [
+        { id: 1, src: Seoul },
+        { id: 2, src: Seoul },
+        { id: 3, src: Seoul },
+    ];
+    
     return (
         <Slider {...settings}>
                 {
