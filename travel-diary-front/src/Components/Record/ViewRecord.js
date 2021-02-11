@@ -20,20 +20,25 @@ const HeadButtonBlock = styled.div`
   width: 360px;
   height: 56px;
   padding-top: 8px;
+  position: absolute;
   display: flex;
   button.back {
     width: 30px;
     height: 30px;
     margin: 2% 0 0 4%;
+    background-color: rgba(0, 0, 0, 0);;
+    border: 0;
+    outline: 0;
     cursor: pointer;
   }
   button.edit {
     width: 30px;
     height: 30px;
     margin: 2% 0 0 62%;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);;
     border: 0;
     outline: none;
+    outline: 0;
     img.editImg {
       width: 30px;
       height: 30px;
@@ -44,12 +49,15 @@ const HeadButtonBlock = styled.div`
     width: 30px;
     height: 30px;
     margin: 2% 0 0 4%;
+    background-color: rgba(0, 0, 0, 0);;
+    border: 0;
+    outline: 0;
     cursor: pointer;
   }
 `;
 
 const RecordBlock = styled.div`
-  margin: 10% 0 0 0;
+  margin: 6% 0 0 0;
   font-family:'Noto Sans KR';
   text-align: center;
   h2 {
@@ -109,13 +117,13 @@ function Record() {
   }
     return (
         <MainPageBlock>
-          <HeadButtonBlock>
-              <button className="back"></button>
-              <button onClick={onEdit} className="edit"><img src={Write} alt="editImg" className="editImg"/></button>
-              <button onClick={onDelete} className="delete"></button>
-          </HeadButtonBlock>
           <ImageSlider>
           </ImageSlider>
+          <HeadButtonBlock>
+                <button className="back">back</button>
+                <button onClick={onEdit} className="edit"><img src={Write} alt="editImg" className="editImg"/></button>
+                <button onClick={onDelete} className="delete">delete</button>
+          </HeadButtonBlock>
           <RecordBlock>
             <h5 className="date">2021년 2월 10일</h5>
             <h2>광화문에서</h2>

@@ -3,8 +3,13 @@ import Slider from 'react-slick';
 import Slide from './Slide';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Seoul from '../../images/seoul.png';
-
+import Sample from '../../images/SliderSample.png';
+import styled from 'styled-components';
+const Container = styled.div`
+    width: 100%;
+    height: 60vh;
+    position: relative;
+`;
 function ImageSlider() {
     const settings = {
         dots: true,
@@ -13,23 +18,24 @@ function ImageSlider() {
         slideToShow: 1,
         slideToScroll: 1,
         arrows: false,
-        centerMode: true
     };
     
     const items = [
-        { id: 1, src: Seoul },
-        { id: 2, src: Seoul },
-        { id: 3, src: Seoul },
+        { id: 1, src: Sample },
+        { id: 2, src: Sample },
+        { id: 3, src: Sample },
     ];
     
     return (
+        <Container>
         <Slider {...settings}>
                 {
                     items.map(item => 
-                        <Slide key={item.id} src={item.src}></Slide>
+                        <Slide key={item.id} image={item.src}></Slide>
                     )
                 }
         </Slider>
+        </Container>
             
     );
 }
