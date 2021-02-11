@@ -3,12 +3,15 @@ import styled from 'styled-components';
 
 const IMG = styled.img`
     width: 100%;
-    height: 40vh;
+    height: 60vh;
+    position: relative;
 `;
 
-function Slide({ img }) {
+function Slide({ image }) {
     return (
-        <IMG src={img} />
+        <>
+        <IMG src={image} />
+        </>
     );
 }
 
