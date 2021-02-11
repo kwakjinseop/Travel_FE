@@ -96,7 +96,7 @@ function RecordDialog({ children, complete, visible, onConfirm, onCancel }) {
             <DialogBlock>
                 <h3>알림</h3>
                 <h5>{children}</h5>
-                { complete? <ButtonGroup><button onClick={onCancel}>아니오</button><button onClick={onConfirm}>네</button></ButtonGroup> : <CompleteButton>확인</CompleteButton>}
+                { complete === 'false' ? <ButtonGroup><button onClick={onCancel}>아니오</button><button onClick={onConfirm}>네</button></ButtonGroup> : <CompleteButton onClick={onConfirm}>확인</CompleteButton>}
             </DialogBlock>
         </DarkBackground>
     );
