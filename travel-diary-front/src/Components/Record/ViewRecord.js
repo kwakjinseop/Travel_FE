@@ -57,31 +57,45 @@ const HeadButtonBlock = styled.div`
 `;
 
 const RecordBlock = styled.div`
-  margin: 5% 0 0 0;
   font-family:'Noto Sans KR';
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+  margin: 2%;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
   h2 {
     margin: 0;
     padding: 0;
   }
   h5.date{
     color: gray;
-    margin: 5% 0 0 0;
+    margin: 8% 0 0 0;
     padding: 0;
     font-weight: 500;
   }
   p.location{
+    text-align: center;
+    font-size: 13px;
+    margin: 3% 0 5% 0;
     font-size: 12px;
-    margin: 3% 0 10% 0;
     vertical-align: middle;
     img {
-      width: 4%;
+      vertical-align: middle;
+      width: 10%;
       margin: 0 2% 0 0;
     }
     color: #6fcf97;
     font-weight: 500;
   }
-  h5.content {
+  p.content {
+    font-size: 12px;
+    width: 80%;
     font-weight: 500;
   }
   hr {
@@ -123,7 +137,10 @@ function ViewRecord({ history }) {
             <h2>광화문에서</h2>
             <p className="location"><img alt="location" src={Location} />서울특별시 종로구</p>
             <hr/>
-            <h5 className="content">어쩌구 저쩌구</h5>
+            <p className="content">새해가 된지 이틀.
+            부모님이랑 함께 오랜만에 광화문으로 가서 산책을 하기로 했다. 마침 날씨도 좋아서 기분이 좋았다
+            
+            아침겸 점심으로 부모님이랑 함께 한식을 먹었다</p>
           </RecordBlock>
           <RecordDialog 
           visible={deleteDialog} 
