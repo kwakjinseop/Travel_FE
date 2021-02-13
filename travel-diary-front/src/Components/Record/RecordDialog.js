@@ -2,21 +2,12 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 `;
-
 const slideUp = keyframes`
-    from {
-        transform: translateY(200px);
-    }
-    to {
-        transform: translateY(0px);
-    }
+    from { transform: translateY(200px); }
+    to { transform: translateY(0px); }
 `;
 const DarkBackground = styled.div`
   position: fixed;
@@ -28,6 +19,7 @@ const DarkBackground = styled.div`
   align-items: center;
   justify-content: center;
   background: rgba(51, 51, 51, 0.6);
+  
   animation-duration: 0.25s;
   animation-timing-function: ease-out;
   animation-name: ${fadeIn};
@@ -47,13 +39,13 @@ const DialogBlock = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   font-family: 'Noto Sans KR';
-
   h4 {
     margin: 0;
   }
   h5 {
-      font-weight: 500;
+    font-weight: 500;
   }
+
   animation-duration: 0.25s;
   animation-timing-function: ease-out;
   animation-name: ${slideUp};
@@ -71,6 +63,7 @@ const ButtonGroup = styled.div`
         outline: 0;
         width: 40%;
         font-family: 'Noto Sans KR';
+        font-weight: bold;
         background-color: white;
         color: gray;
         cursor: pointer;
@@ -87,6 +80,7 @@ const CompleteButton = styled.button`
     outline: 0;
     margin-top: 4%;
     font-family: 'Noto Sans KR';
+    font-weight: bold;
     background-color: white;
     color: gray;
     cursor: pointer;
@@ -103,7 +97,11 @@ function RecordDialog({ children, complete, visible, onConfirm, onCancel }) {
             <DialogBlock>
                 <h4>알림</h4>
                 <h5>{children}</h5>
-                { complete === 'false' ? <ButtonGroup><button onClick={onCancel}>아니오</button><button onClick={onConfirm}>네</button></ButtonGroup> : <CompleteButton onClick={onConfirm}>확인</CompleteButton>}
+                { complete ? 
+                <CompleteButton onClick={onConfirm}>확인</CompleteButton> 
+                : <ButtonGroup>
+                <button onClick={onCancel}>아니오</button><button onClick={onConfirm}>네</button>
+                </ButtonGroup> }
             </DialogBlock>
         </DarkBackground>
     );

@@ -9,9 +9,7 @@ const IMG = styled.img`
 
 function Slide({ image }) {
     return (
-        <>
         <IMG src={image} />
-        </>
     );
 }
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import naverLogo from '../../images/naverlogo.svg';
-import { withRouter } from 'react-router-dom';
 
 const NaverBtn = styled.div`
     width: 296px;
@@ -21,28 +20,19 @@ const NaverBtn = styled.div`
     img.icon {
         vertical-align: middle;
         display: inline-block;
-        width: 15.1px;
-        height: 15px;
-        margin: 0 auto;
-        margin-left: 14px;
-        margin-top: 12px;
-        margin-bottom: 13px;
+        width: 5%;
+        height: 37.5%;
+        margin: 4% 0 4% 5%;
         background-color: #5ab133;
     }
     span.buttonText {
         vertical-align: middle;
-        width: 120px;
-        height: 16px;
-        margin: 0 auto;
-        margin-left: 56.9px;
-        margin-top: 12px;
-        margin-bottom: 12px;
+        width: 40%;
+        height: 40%;
+        margin: 2% 0 2% 22%;
         font-family: 'Noto Sans KR';
         font-size: 14px;
         font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
         letter-spacing: normal;
         color: #ffffff;
     }
@@ -84,4 +74,4 @@ function NaverButton({ history }) {
     );
 }
 
-export default withRouter(NaverButton);
+export default NaverButton;

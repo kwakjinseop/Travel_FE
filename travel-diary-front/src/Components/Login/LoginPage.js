@@ -16,22 +16,22 @@ const LoginPageBlock = styled.div`
 `;
 
 const LogoImageBlock = styled.div`
-    width: 96px;
-    height: 100px;
+    width: 26%;
+    height: 13%;
     border-radius: 10px;
     background: #6fcf97;
-    margin-top: 120px;
+    margin-top: 35%;
 `;
 
 const LogoBlock = styled.div`
-    width: 88px;
-    height: 40px;
-    margin-top: 20px;
+    width: 24%;
+    height: 5%;
+    margin-top: 5%;
 `;
 
 const Wrapper = styled.div`
     & + & {
-        margin-top: 17px;
+        margin-top: 4%;
     }
 `;
 
