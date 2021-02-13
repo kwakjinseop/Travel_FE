@@ -97,6 +97,7 @@ const RecordBlock = styled.div`
     font-size: 12px;
     width: 80%;
     font-weight: 500;
+    letter-spacing: normal;
   }
   hr {
     width: 300px;
@@ -123,6 +124,8 @@ function ViewRecord({ history }) {
   const onECancel = () => setEdit(false);
   const onCConfirm = () => setComplete(false);
   const goBack = () => history.goBack();
+
+  const contentElement = "새해가 된지 이틀.\n부모님이랑 함께 오랜만에 광화문으로 가서 산책을 하기로 했다. 마침 날씨도 좋아서 기분이 좋았다.\n아침겸 점심으로 부모님이랑 함께 한식을 먹었다.부모님과 함께 식당에서 오순도순 이야기를 해서 행복했다.부모님이랑 함께 있는 것만으로도 행복했다.부모님이랑 함께 있는것만으로도 이렇게 힐링이 된다니!그동안 바쁘다는 핑계로 부모님과 함께 여행을 못갔는데 다음에는 부모님과 함께 망설이지 말고 같이 여행가고 싶다는 생각이 들었다.\n밥을 먹고난 뒤 광화문에서 산책을 하면서 부모님과 함께 이런 저런 이야기를 많이했다. 내 생각엔 요즘 부모님께서 내 직장에 관심이 많으신가보다. 앞으로 평소보다 부모님과 대화하는 시간을 더 늘릴까 싶다."
     return (
         <MainPageBlock>
           <ImageSlider>
@@ -137,10 +140,9 @@ function ViewRecord({ history }) {
             <h2>광화문에서</h2>
             <p className="location"><img alt="location" src={Location} />서울특별시 종로구</p>
             <hr/>
-            <p className="content">새해가 된지 이틀.
-            부모님이랑 함께 오랜만에 광화문으로 가서 산책을 하기로 했다. 마침 날씨도 좋아서 기분이 좋았다
-            
-            아침겸 점심으로 부모님이랑 함께 한식을 먹었다</p>
+            {contentElement.split('\n').map((line, index)=>{
+              return <p key={index} className="content">{line}</p>
+            })}
           </RecordBlock>
           <RecordDialog 
           visible={deleteDialog} 
