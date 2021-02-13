@@ -62,7 +62,7 @@ const RecordBlock = styled.div`
   align-items: center;
   flex-direction: column;
   overflow: scroll;
-  margin: 2%;
+  margin: 2% 0 2% 0;
   &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
