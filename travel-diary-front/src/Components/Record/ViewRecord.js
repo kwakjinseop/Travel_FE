@@ -62,7 +62,7 @@ const RecordBlock = styled.div`
   align-items: center;
   flex-direction: column;
   overflow: scroll;
-  margin: 2% 0 2% 0;
+  margin: 4% 0 4% 0;
   &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -75,7 +75,7 @@ const RecordBlock = styled.div`
   }
   h5.date{
     color: gray;
-    margin: 8% 0 0 0;
+    margin: 5% 0 0 0;
     padding: 0;
     font-weight: 500;
   }
