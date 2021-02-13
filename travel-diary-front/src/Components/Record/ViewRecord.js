@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Write from '../../images/Write.png';
 import Location from '../../images/Location.png';
 import RecordDialog from './RecordDialog';
+import { withRouter } from 'react-router-dom';
 
 const MainPageBlock = styled.div`
   width: 360px;
@@ -19,36 +20,35 @@ const MainPageBlock = styled.div`
 const HeadButtonBlock = styled.div`
   width: 360px;
   height: 56px;
-  padding-top: 8px;
   position: absolute;
   display: flex;
   button.back {
-    width: 30px;
-    height: 30px;
-    margin: 2% 0 0 4%;
+    width: 10%;
+    height: 45%;
+    margin: 3% 0 0 4%;
     background-color: rgba(0, 0, 0, 0);;
     border: 0;
     outline: 0;
     cursor: pointer;
   }
   button.edit {
-    width: 30px;
-    height: 30px;
-    margin: 2% 0 0 62%;
+    width: 10%;
+    height: 45%;
+    margin: 3% 0 0 60%;
     background-color: rgba(0, 0, 0, 0);;
     border: 0;
     outline: none;
     outline: 0;
     img.editImg {
-      width: 30px;
-      height: 30px;
+      width: 100%;
+      height: 100%;
     }
     cursor: pointer;
   }
   button.delete {
-    width: 30px;
-    height: 30px;
-    margin: 2% 0 0 4%;
+    width: 10%;
+    height: 45%;
+    margin: 3% 4% 0 0;
     background-color: rgba(0, 0, 0, 0);;
     border: 0;
     outline: 0;
@@ -57,7 +57,7 @@ const HeadButtonBlock = styled.div`
 `;
 
 const RecordBlock = styled.div`
-  margin: 6% 0 0 0;
+  margin: 5% 0 0 0;
   font-family:'Noto Sans KR';
   text-align: center;
   h2 {
@@ -66,16 +66,17 @@ const RecordBlock = styled.div`
   }
   h5.date{
     color: gray;
-    margin: 10% 0 2% 0;
+    margin: 5% 0 0 0;
     padding: 0;
     font-weight: 500;
   }
   p.location{
-    font-size: 13px;
-    margin: 2% 0 10% 0;
+    font-size: 12px;
+    margin: 3% 0 10% 0;
+    vertical-align: middle;
     img {
-      width: 5%;
-      margin: 3% 1% 0 0;
+      width: 4%;
+      margin: 0 2% 0 0;
     }
     color: #6fcf97;
     font-weight: 500;
@@ -89,38 +90,31 @@ const RecordBlock = styled.div`
   }
 `;
 
-function Record() {
+function ViewRecord({ history }) {
   const [deleteDialog, setDelete] = useState(false);
   const [editDialog, setEdit] = useState(false);
   const [completeDialog, setComplete] = useState(false);
-  const onDelete = () => {
-    setDelete(true);
-  }
-  const onEdit = () => {
-    setEdit(true);
-  }
+  // 다이얼로그 열기
+  const onDelete = () => setDelete(true); 
+  const onEdit = () => setEdit(true);
+  // 예, 아니오
   const onDConfirm = () => {
     setDelete(false);
     setComplete(true);
   }
-  const onDCancel = () => {
-    setDelete(false);
-  }
+  const onDCancel = () => setDelete(false);
   const onEConfirm = () => {
     setEdit(false);
   }
-  const onECancel = () => {
-    setEdit(false);
-  }
-  const onCConfirm = () => {
-    setComplete(false);
-  }
+  const onECancel = () => setEdit(false);
+  const onCConfirm = () => setComplete(false);
+  const goBack = () => history.goBack();
     return (
         <MainPageBlock>
           <ImageSlider>
           </ImageSlider>
           <HeadButtonBlock>
-                <button className="back">back</button>
+                <button onClick={goBack}className="back">back</button>
                 <button onClick={onEdit} className="edit"><img src={Write} alt="editImg" className="editImg"/></button>
                 <button onClick={onDelete} className="delete">delete</button>
           </HeadButtonBlock>
@@ -128,25 +122,25 @@ function Record() {
             <h5 className="date">2021년 2월 10일</h5>
             <h2>광화문에서</h2>
             <p className="location"><img alt="location" src={Location} />서울특별시 종로구</p>
-            <hr />
+            <hr/>
             <h5 className="content">어쩌구 저쩌구</h5>
           </RecordBlock>
           <RecordDialog 
           visible={deleteDialog} 
-          complete="false"
+          complete={false}
           onConfirm={onDConfirm}
           onCancel={onDCancel} >정말 삭제하시겠습니까?</RecordDialog>
           <RecordDialog 
           visible={editDialog} 
-          complete="false" 
+          complete={false}
           onConfirm={onEConfirm}
           onCancel={onECancel}>이 글을 편집하시겠습니까?</RecordDialog>
           <RecordDialog 
           visible={completeDialog} 
-          complete="true"
+          complete
           onConfirm={onCConfirm}>삭제가 완료되었습니다.</RecordDialog>
         </MainPageBlock>
     );
 }
 
-export default Record;
+export default withRouter(ViewRecord);

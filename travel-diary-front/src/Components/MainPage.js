@@ -17,8 +17,8 @@ const MainPageBlock = styled.div`
 `;
 
 const HeadBlock = styled.div`
-  width: 360px;
-  height: 56px;
+  width: 100%;
+  height: 7.4%;
   padding-top: 8px;
   background-color: #ffffff;
   img.travel {

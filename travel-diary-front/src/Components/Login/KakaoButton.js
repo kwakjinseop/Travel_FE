@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import kakaoLogo from '../../images/kakaologo.svg';
-import { withRouter } from 'react-router-dom';
 
 const KakaoBtn = styled.button`
   width: 296px;
@@ -11,7 +10,7 @@ const KakaoBtn = styled.button`
   border: 0;
   outline: 0;
   border-radius: 10px;
-  margin-top: 60px;
+  margin-top: 25%;
   text-align: left;
 
   cursor: pointer;
@@ -22,28 +21,19 @@ const KakaoBtn = styled.button`
   img.icon {
     vertical-align: middle;
     display: inline-block;
-    width: 20px;
-    height: 18.5px;
-    margin: 0 auto;
-    margin-left: 4px;
-    margin-top: 10px;
-    margin-bottom: 11.5px;
+    width: 7%;
+    height: 60%;
+    margin: 3% 0 2.5% 2%;
     background-color: #f6e24b;
   }
   span.buttonText {
     vertical-align: middle;
-    width: 146px;
-    height: 16px;
-    margin: 0 auto;
-    margin-left: 48px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    width: 49%;
+    height: 40%;
+    margin: 2% 0 2% 18%;
     font-family: 'Noto Sans KR';
     font-size: 14px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
     letter-spacing: normal;
     color: #000000;
   }
@@ -59,16 +49,11 @@ function KakaoButton({ history }) {
   }, []);
 
   const kakaoFetchUsers = async () => {
-    const headers = {
-      'Access-Control-Allow-Origin': '*',
-      Accept: 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded',
-    };
     try {
       setUsers(null);
       setError(null);
       setLoading(true);
-      const response = await axios.get('/users/login/kakao', headers);
+      const response = await axios.get('/users/login/kakao');
       setUsers(response.data);
     } catch (e) {
       setError(e);
@@ -86,4 +71,4 @@ function KakaoButton({ history }) {
   );
 }
 
-export default withRouter(KakaoButton);
+export default KakaoButton;
