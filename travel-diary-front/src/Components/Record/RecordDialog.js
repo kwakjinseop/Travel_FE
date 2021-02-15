@@ -32,7 +32,7 @@ const DialogBlock = styled.div`
   height: 130px;
   padding: 10px;
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,9 +40,11 @@ const DialogBlock = styled.div`
   flex-wrap: wrap;
   font-family: 'Noto Sans KR';
   h4 {
+    font-size: 18px;
     margin: 0;
   }
   h5 {
+    font-size: 14px;
     font-weight: 500;
   }
 
@@ -65,7 +67,7 @@ const ButtonGroup = styled.div`
         font-family: 'Noto Sans KR';
         font-weight: bold;
         background-color: white;
-        color: gray;
+        color: #828282;
         cursor: pointer;
         &:hover {
             color: skyblue;
@@ -82,10 +84,10 @@ const CompleteButton = styled.button`
     font-family: 'Noto Sans KR';
     font-weight: bold;
     background-color: white;
-    color: gray;
+    color: #828282;
     cursor: pointer;
     &:hover {
-            color: skyblue;
+            color: #56ccf2;
     }
 `;
 
