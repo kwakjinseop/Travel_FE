@@ -8,14 +8,14 @@ import Sample from '../../images/SliderSample.png';
 
 const Container = styled.div`
     width: 100%;
-    height: 60vh;
+    height: 55vh;
     position: relative;
 `;
 
 const StyledSlider = styled(Slider)`
     .slick-dots {
         position: absolute;
-        bottom: 10px;
+        bottom: 3%;
         list-style: none;
         display: block;
         text-align: center;
@@ -24,14 +24,15 @@ const StyledSlider = styled(Slider)`
         li {
             position: relative;
             display: inline-block;
-            margin: 5px;
+            margin: 1%;
             padding: 0;
             button:before {
-                color: #ffffff;
+                opacity: 0.8;
+                color: #f2f2f2;
             }
         }
         li.slick-active button:before {
-            color: #6fcf97 !important;
+            color: rgba(111, 207, 151, 0.8);
         }
     }
 `;
