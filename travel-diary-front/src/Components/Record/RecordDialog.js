@@ -78,7 +78,7 @@ const ButtonGroup = styled.div`
         }
     }
     hr {
-        width: 26%;
+        width: 28%;
         height: 1%;
         border-color: rgba(0, 0, 0, 0);
         transform: rotate(90deg);
