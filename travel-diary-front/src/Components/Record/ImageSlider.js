@@ -13,6 +13,7 @@ const Container = styled.div`
 `;
 
 const StyledSlider = styled(Slider)`
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(196, 196, 196, 0));
     .slick-dots {
         position: absolute;
         bottom: 3%;

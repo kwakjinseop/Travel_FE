@@ -24,10 +24,7 @@ const HeadButtonBlock = styled.div`
   height: 56px;
   position: absolute;
   display: flex;
-  padding: 1.5%;
   button.back {
-    width: 10%;
-    height: 45%;
     margin: 0 0 0 4%;
     background-color: rgba(0, 0, 0, 0);
     border: 0;
@@ -35,8 +32,6 @@ const HeadButtonBlock = styled.div`
     cursor: pointer;
   }
   button.edit {
-    width: 10%;
-    height: 45%;
     margin: 0 0 0 65%;
     background-color: rgba(0, 0, 0, 0);
     border: 0;
@@ -45,9 +40,7 @@ const HeadButtonBlock = styled.div`
     cursor: pointer;
   }
   button.delete {
-    width: 10%;
-    height: 45%;
-    margin: 0 4% 0 0;
+    margin: 0 0 0 1%;
     background-color: rgba(0, 0, 0, 0);;
     border: 0;
     outline: 0;
@@ -89,7 +82,6 @@ const RecordBlock = styled.div`
     }
   }
   p.location{
-    font-size: 13px;
     margin: 3% 0 5% 0;
     font-size: 12px;
     color: #6fcf97;
@@ -102,7 +94,7 @@ const RecordBlock = styled.div`
     font-weight: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+    
   }
   hr {
     width: 85%;
