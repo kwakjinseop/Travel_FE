@@ -28,26 +28,31 @@ const DarkBackground = styled.div`
 
 const DialogBlock = styled.div`
   position: absolute;
-  width: 230px;
-  height: 130px;
-  padding: 10px;
+  width: 210px;
+  height: 125px;
+  padding-top: 1%;
   background: #ffffff;
   border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
   font-family: 'Noto Sans KR';
   h4 {
     font-size: 18px;
     margin: 0;
   }
   h5 {
+    margin: 5% 0 5% 0;
     font-size: 14px;
     font-weight: 500;
   }
 
+  hr {
+        width: 99%;
+        border-color: rgba(0, 0, 0, 0);
+        background-color: #cacaca;
+    }
   animation-duration: 0.25s;
   animation-timing-function: ease-out;
   animation-name: ${slideUp};
@@ -55,15 +60,14 @@ const DialogBlock = styled.div`
 `;
 
 const ButtonGroup = styled.div`
-    width: 100%;
+    width: 85%;
     display: flex;
-    justify-content: center;
-    margin-top: 4%;
+    flex-direction: row;
+    align-items: center;
     button {
-        margin: 0;
         border: 0;
         outline: 0;
-        width: 40%;
+        width: 49%;
         font-family: 'Noto Sans KR';
         font-weight: bold;
         background-color: white;
@@ -73,14 +77,19 @@ const ButtonGroup = styled.div`
             color: skyblue;
         }
     }
+    hr {
+        width: 26%;
+        height: 1%;
+        border-color: rgba(0, 0, 0, 0);
+        transform: rotate(90deg);
+        background-color: #cacaca;
+    }
 `;
 
 const CompleteButton = styled.button`
     display: outline;
-    margin: 0;
     border: 0;
     outline: 0;
-    margin-top: 4%;
     font-family: 'Noto Sans KR';
     font-weight: bold;
     background-color: white;
@@ -99,10 +108,11 @@ function RecordDialog({ children, complete, visible, onConfirm, onCancel }) {
             <DialogBlock>
                 <h4>알림</h4>
                 <h5>{children}</h5>
+                <hr />
                 { complete ? 
                 <CompleteButton onClick={onConfirm}>확인</CompleteButton> 
                 : <ButtonGroup>
-                <button onClick={onCancel}>아니오</button><button onClick={onConfirm}>네</button>
+                <button onClick={onCancel}>아니오</button><hr /><button onClick={onConfirm}>네</button>
                 </ButtonGroup> }
             </DialogBlock>
         </DarkBackground>
