@@ -62,7 +62,7 @@ const DialogBlock = styled.div`
 `;
 
 const ButtonGroup = styled.div`
-    width: 85%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
