@@ -49,7 +49,9 @@ const DialogBlock = styled.div`
   }
 
   hr {
-        width: 99%;
+        width: 100%;
+        height: 1%;
+        border: 0;
         border-color: rgba(0, 0, 0, 0);
         background-color: #cacaca;
     }
@@ -78,8 +80,9 @@ const ButtonGroup = styled.div`
         }
     }
     hr {
-        width: 28%;
+        width: 30%;
         height: 1%;
+        border: 0;
         border-color: rgba(0, 0, 0, 0);
         transform: rotate(90deg);
         background-color: #cacaca;
