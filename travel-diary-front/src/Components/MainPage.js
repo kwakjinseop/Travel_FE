@@ -47,7 +47,7 @@ const Background = styled.div`
 
 const SearchBlock = styled.div`
   width: 86.6%;
-  height: 5%;
+  height: 6%;
   margin: 3% 0 0 0;
   padding: 0 0 0 3%;
   border-radius: 20px;
@@ -61,8 +61,9 @@ const SearchBlock = styled.div`
   }
   input.search {
     width: 90%;
-    height: 100%;
+    height: 99%;
     margin-left: 1%;
+    padding-top: 1%;
     font-size: 12px;
     border: 0;
     outline: 0;
