@@ -2,35 +2,35 @@ import React from 'react';
 import styled from 'styled-components';
 
 const NavigatorBlock = styled.div`
-  width: 360px;
-  height: 66px;
+  width: 100%;
+  height: 8.6%;
   position: relative;
-  margin-bottom: 0px;
+  margin: 0px;
   object-fit: contain;
   button.home {
-    width: 90px;
-    height: 66px;
+    width: 25%;
+    height: 100%;
     border: 0;
     outline: 0;
     cursor: pointer;
   }
   button.write {
-    width: 90px;
-    height: 66px;
+    width: 25%;
+    height: 100%;
     border: 0;
     outline: 0;
     cursor: pointer;
   }
   button.see {
-    width: 90px;
-    height: 66px;
+    width: 25%;
+    height: 100%;
     border: 0;
     outline: 0;
     cursor: pointer;
   }
   button.myPage {
-    width: 90px;
-    height: 66px;
+    width: 25%;
+    height: 100%;
     border: 0;
     outline: 0;
     cursor: pointer;

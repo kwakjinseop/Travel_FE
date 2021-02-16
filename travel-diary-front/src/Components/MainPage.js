@@ -18,23 +18,18 @@ const MainPageBlock = styled.div`
 
 const HeadBlock = styled.div`
   width: 100%;
-  height: 7.4%;
-  padding-top: 8px;
+  height: 6.4%;
+  padding-top: 5%;
   background-color: #ffffff;
   img.travel {
     display: inline-block;
-    width: 88px;
-    height: 40px;
-    margin-left: 128px;
+    margin-left: 35%;
     object-fit: contain;
-    text-align: left;
   }
   button.moreBtn {
     display: inline-block;
-    width: 24px;
-    height: 24px;
     background-color: #ffffff;
-    margin-left: 88px;
+    margin-left: 25%;
     border: 0;
     outline: 0;
     cursor: pointer;
@@ -42,64 +37,56 @@ const HeadBlock = styled.div`
 `;
 
 const Background = styled.div`
-  width: 360px;
-  height: 638px;
+  width: 100%;
+  height: 83%;
   background-image: linear-gradient(to bottom, #fcfcff, #d0ffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const SearchBlock = styled.div`
-  width: 312px;
-  height: 34px;
-  margin-top: 11px;
-  margin-left: 21px;
-  padding-top: 2px;
+  width: 86.6%;
+  height: 5%;
+  margin: 3% 0 0 0;
+  padding: 0 0 0 3%;
   border-radius: 20px;
   border: solid 1px #bdbdbd;
   background-color: #ffffff;
   button.searchBtn {
-    width: 40px;
-    height: 32px;
     border: 0;
     outline: 0;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
   }
   input.search {
-    width: 270px;
-    height: 32px;
+    width: 90%;
+    height: 100%;
+    margin-left: 1%;
     font-size: 12px;
     border: 0;
     outline: 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
   }
 `;
 
 const MapBlock = styled.div`
-  width: 312px;
-  height: 481px;
-  margin-top: 21px;
-  margin-left: 24px;
+  width: 90%;
+  height: 85%;
+  margin-top: 7%;
   object-fit: contain;
   box-shadow: 7px 7px 12px 0 #b2d6e1;
 `;
 
 const DirectBtn = styled.button`
-  width: 59px;
-  height: 59px;
-  margin-left: 284px;
-  margin-bottom: 10px;
-  border-radius: 50%;
+  margin-left: 75%;
   object-fit: contain;
   border: 0;
   outline: 0;
+  background-color: rgba(0,0,0,0);
   cursor: pointer;
   img.directImg {
     position: relative;
-    right: 13px;
-    bottom: 7px;
   }
 `;
 
