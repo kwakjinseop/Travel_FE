@@ -5,7 +5,7 @@ const NavigatorBlock = styled.div`
   width: 100%;
   height: 8.6%;
   position: relative;
-  margin: 0px;
+  margin: 0;
   object-fit: contain;
   button.home {
     width: 25%;

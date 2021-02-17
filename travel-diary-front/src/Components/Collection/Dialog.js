@@ -38,6 +38,7 @@ const DialogBlock = styled.div`
   width: 328px;
   height: 188px;
   padding: 10px;
+  position: absolute;
   background: #ffffff;
   border-radius: 20px;
   display: flex;
