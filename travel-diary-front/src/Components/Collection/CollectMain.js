@@ -16,6 +16,8 @@ import Sun from '../../images/sun.png';
 import Search from '../../images/search.svg';
 import Dialog from './Dialog';
 
+import { withRouter } from 'react-router-dom';
+
 // margin 상 우 하 좌 = > 기억하기!
 const MainPageBlock = styled.div`
   width: 360px;
@@ -271,4 +273,4 @@ function CollectMain({ history }) {
   );
 }
 
-export default CollectMain;
+export default withRouter(CollectMain);

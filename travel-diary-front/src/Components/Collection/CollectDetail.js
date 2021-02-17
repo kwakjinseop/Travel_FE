@@ -7,13 +7,14 @@ import data from '../Data/CollectionData';
 import Collection from './Collection';
 // 화면에서 사용되는 이미지
 import Seoul from '../../images/seoul.png';
-import Write from '../../images/Write.png';
-import Location from '../../images/Location.png';
+import Write from '../../images/directwrite.svg';
 import Like from '../../images/heart.png';
 import Exit from '../../images/logout.png';
 import Point from '../../images/point.png';
-import Search from '../../images/search.png';
+import Search from '../../images/search.svg';
+import Back from '../../images/back.svg'
 import Dialog from './Dialog';
+import { withRouter } from 'react-router-dom';
 
 // margin 상 우 하 좌 = > 기억하기!
 const MainPageBlock = styled.div`
@@ -28,62 +29,40 @@ const MainPageBlock = styled.div`
 `;
 
 const HeadBlock = styled.div`
-  width: 360px;
-  height: 56px;
-  padding-top: 8px;
-  display: flex;
+  width: 100%;
+  height: 6.4%;
+  padding-top: 5%;
   background-color: #ffffff;
-  img.travel {
+  button.backBtn {
     display: inline-block;
-    width: 88px;
-    height: 40px;
-    margin-left: 128px;
-    object-fit: contain;
-    text-align: left;
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 2%;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
   }
-  button.moreBtn {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+  span {
+    vertical-align: top;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: -1.6px;
+    color: #828282;
     background-color: #ffffff;
-    margin-left: 88px;
+    margin: 0 0 0 30%;
+  }
+  button.searchBtn {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 28%;
     border: 0;
     outline: 0;
     cursor: pointer;
   }
 `;
 
-const BackBtn = styled.button`
-  width: 6px;
-  height: 12px;
-  margin: 4% 0% 0% 3%;
-`;
-
-const SearchBtn = styled.button`
-  background: white;
-  border: none;
-  outline:none;
-  margin: 0% 0% 2.7% 30%;
-`;
-
-const HeadText = styled.div`
-  width: 57px;
-  height: 19px;
-  margin: 3% 0% 1% 33%;
-  font-family: Roboto;
-  font-size: 16spx;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  color: #dee2e6;
-  line-height: normal;
-  letter-spacing: -1.6px;
-  text-align: left;
-  color: var(--test-color-828282);
-`;
-
 const Background = styled.div`
-  width: 360px;
+  width: 100%;
   height: 638px;
   position: relative;
   background-image: linear-gradient(to bottom, #fcfcff, #d0ffff);
@@ -94,7 +73,6 @@ const ImageDiv = styled.div`
     vertical-align: middle;
     display: inline-block;
     width: 100%;
-    height: 350px;
     position: absolute;
     margin: 0 auto;
     background-color: white;
@@ -102,26 +80,36 @@ const ImageDiv = styled.div`
 `;
 
 const InfoDiv = styled.div`
-  width: 360px;
-  height: 468px;
+  width: 100%;
+  height: 60%;
   position: relative;
-  margin: 60% 0% 0% 0%;
+  margin: 70% 0% 0% 0%;
   border-radius: 16px;
-  padding: 21px 0.1px 0 0;
+  padding: 5% 0 0 3%;
   background-color: #ffffff;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
 `;
 
 // margin 상 우 하 좌
 const InfoHead = styled.div`
   display: flex;
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: normal;
   h5 {
-    margin: 0% 0% 0% 0%;
-    font-size: 30px;
+    margin: 0;
+    font-size: 32px;
+    color: #4f4f4f;
   }
   span {
-    margin: 4% 30% 0% 2%;
-    font-size: 15px;
+    margin: 6% 0 0 2%;
+    font-size: 16px;
+    color: #4f4f4f;
   }
 `;
 
@@ -129,13 +117,18 @@ const PointBtn = styled.button`
   background: white;
   border: none;
   outline:none;
-  margin: 1% 0% 0% 3%;
+  margin: 4% 0 0 3%;
+  img {
+    width: 80%;
+  }
 `;
 
 const WriteBtn = styled.button`
   background: white;
   border: none;
   outline:none;
+  margin: 0 0 0 25%;
+  cursor: pointer;
 `;
 
 const DetailInfoDiv = styled.div`
@@ -145,6 +138,8 @@ const DetailInfoDiv = styled.div`
   h5 {
     margin: 1% 30% 2% 5%;
     font-weight: normal;
+    font-size: 16px;
+    color: #828282;
   }
   span {
     margin: 0.5% 0% 0% 0%;
@@ -173,7 +168,7 @@ const ItemDiv = styled.div`
   margin: 4% 0% 0% 15%;
 `;
 
-function CollectDetail() {
+function CollectDetail({ history }) {
   const [item, setItem] = useState(data);
   const [isOpen, setOpen] = useState(false);
   const modalEl = useRef(null);
@@ -190,14 +185,15 @@ function CollectDetail() {
       window.removeEventListener('click', handleClickOutside);
     };
   }, [isOpen]);
+
+  const goBack = () => history.goBack();
+
   return (
     <MainPageBlock>
       <HeadBlock>
-        <BackBtn></BackBtn>
-        <HeadText>기록 보기</HeadText>
-        <SearchBtn>
-          <img src={Search} alt="SearchBtn" className="SearchBtn" />
-        </SearchBtn>
+      <button className="backBtn" onClick={goBack}><img src={Back} alt="backBtn" className="backBtn" /></button>
+        <span>기록 보기</span>
+        <button className="searchBtn"><img src={Search} alt="searchBtn" className="searchBtn" /></button>
       </HeadBlock>
       <Background>
         <ImageDiv>
@@ -210,7 +206,7 @@ function CollectDetail() {
               {isOpen && <Dialog innerref={modalEl} />}
               <img src={Point} alt="PointBtn" className="PointBtn" />
             </PointBtn>
-            <h5>Jonoro</h5> <span>종로구</span>
+            <h5>Jongro</h5> <span>종로구</span>
             <WriteBtn>
               <img src={Write} alt="WriteBtn" className="WriteBtn" />
             </WriteBtn>
@@ -241,4 +237,4 @@ function CollectDetail() {
   );
 }
 
-export default CollectDetail;
+export default withRouter(CollectDetail);
