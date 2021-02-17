@@ -11,7 +11,6 @@ import SelectArea from './Components/SelectArea';
 const GlobalStyle = createGlobalStyle`
   body {
     background: #e9ecef
-    
   }
 `;
 function App() {
