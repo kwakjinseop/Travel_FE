@@ -64,13 +64,6 @@ const SearchBtn = styled.button`
   border: none;
   outline:none;
   margin: 0% 0% 2.7% 30%;
-  img. SearchBtn {
-    vertical-align: middle;
-    display: inline-block;
-    width: 100%;
-    position: absolute;
-    margin: 0 auto;
-    background-color: #f6e24b;
 `;
 
 const HeadText = styled.div`
@@ -137,27 +130,12 @@ const PointBtn = styled.button`
   border: none;
   outline:none;
   margin: 1% 0% 0% 3%;
-  img. PointBtn {
-    vertical-align: middle;
-    display: inline-block;
-    width: 100%;
-    position: absolute;
-    margin: 0% 20% 0% 0%
-    background-color: #f6e24b;
-  }
 `;
 
 const WriteBtn = styled.button`
   background: white;
   border: none;
   outline:none;
-  img. WriteBtn {
-    vertical-align: middle;
-    display: inline-block;
-    width: 100%;
-    position: absolute;
-    margin: 0 auto;
-    background-color: #f6e24b;
 `;
 
 const DetailInfoDiv = styled.div`
@@ -184,25 +162,11 @@ const LikeBtn = styled.button`
   border: none;
   outline:none;
   margin: 0% 0% 0% 3.5%;
-  img. LikeBtn {
-    vertical-align: middle;
-    display: inline-block;
-    width: 100%;
-    position: absolute;
-    margin: 0 auto;
-    background-color: #f6e24b;
 `;
 const ExitBtn = styled.button`
   background: white;
   border: none;
   outline:none;
-  img. ExitBtn {
-    vertical-align: middle;
-    display: inline-block;
-    width: 100%;
-    position: absolute;
-    margin: 0 auto;
-    background-color: #f6e24b;
 `;
 // margin 상 우 하 좌 = > 기억하기!
 const ItemDiv = styled.div`

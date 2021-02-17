@@ -5,8 +5,8 @@ import LoginPage from './Components/Login/LoginPage';
 import MainPage from './Components/MainPage';
 import CollectMain from './Components/Collection/CollectMain';
 import CollectDetail from './Components/Collection/CollectDetail';
-import CollectionMain from './Components/Collection/CollectMain';
 import ViewRecord from './Components/Record/ViewRecord';
+import SelectArea from './Components/SelectArea';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,10 +20,10 @@ function App() {
       <BrowserRouter>
         <GlobalStyle />
         <Route path="/" component={LoginPage} exact />
-        <Route exact path="/mainpage" component={MainPage} />
-        <Route exact path="/collection" component={CollectMain} />
-        <Route exact path="/collection/detail" component={CollectDetail} />
-        <Route exact path="/collection" component={CollectionMain} />
+        <Route path="/mainpage" component={MainPage} />
+        <Route path="/select" component={SelectArea} />
+        <Route path="/collection" component={CollectMain} />
+        <Route path="/detail" component={CollectDetail} />
         <Route path="/viewrecord" component={ViewRecord} />
       </BrowserRouter>
     </>

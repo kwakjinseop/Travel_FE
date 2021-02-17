@@ -21,7 +21,8 @@ const MainPageBlock = styled.div`
 
 const HeadButtonBlock = styled.div`
   width: 360px;
-  height: 56px;
+  height: 6.4%;
+  padding: 1% 0 0 0;
   position: absolute;
   display: flex;
   button.back {
