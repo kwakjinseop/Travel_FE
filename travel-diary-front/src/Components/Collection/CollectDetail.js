@@ -85,7 +85,7 @@ const InfoDiv = styled.div`
   position: relative;
   margin: 70% 0% 0% 0%;
   border-radius: 16px;
-  padding: 5% 0 0 3%;
+  padding: 5% 0 0 0;
   background-color: #ffffff;
   overflow: scroll;
   &::-webkit-scrollbar {
@@ -101,6 +101,7 @@ const InfoHead = styled.div`
   display: flex;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: normal;
+  margin: 0 0 0 2%;
   h5 {
     margin: 0;
     font-size: 32px;
@@ -135,6 +136,7 @@ const DetailInfoDiv = styled.div`
   width: 100%;
   display: flex;
   font-family: 'Noto Sans KR', sans-serif;
+  margin: 0 0 0 2%;
   h5 {
     margin: 1% 30% 2% 5%;
     font-weight: normal;
@@ -149,6 +151,7 @@ const DetailInfoDiv = styled.div`
 `;
 
 const BtnsDiv = styled.div`
+  margin: 0 0 0 2%;
   display: flex;
 `;
 
@@ -157,15 +160,18 @@ const LikeBtn = styled.button`
   border: none;
   outline:none;
   margin: 0% 0% 0% 3.5%;
+  cursor: pointer;
 `;
 const ExitBtn = styled.button`
   background: white;
   border: none;
   outline:none;
+  cursor: pointer;
 `;
 // margin 상 우 하 좌 = > 기억하기!
 const ItemDiv = styled.div`
-  margin: 4% 0% 0% 15%;
+  margin-top: 4%;
+  margin-left: 5%;
 `;
 
 function CollectDetail({ history }) {
@@ -187,6 +193,7 @@ function CollectDetail({ history }) {
   }, [isOpen]);
 
   const goBack = () => history.goBack();
+  const goRecord = () => history.push('/viewrecord');
 
   return (
     <MainPageBlock>
@@ -225,7 +232,7 @@ function CollectDetail({ history }) {
               <img src={Exit} alt="ExitBtn" className="ExitBtn" />
             </ExitBtn>
           </BtnsDiv>
-          <ItemDiv>
+          <ItemDiv onClick={goRecord}>
             {item.slice(0, 4).map((a, i) => {
               return <Collection item={item[i]} i={i} key={i} />;
             })}
