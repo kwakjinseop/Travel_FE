@@ -189,7 +189,8 @@ const ExitBtn = styled.button`
 `;
 // margin 상 우 하 좌 = > 기억하기!
 const ItemDiv = styled.div`
-  margin: 4% 0% 0% 15%;
+  margin-top: 4%;
+  margin-left: 5%;
 `;
 
 function CollectMain({ history }) {
@@ -211,6 +212,8 @@ function CollectMain({ history }) {
   }, [isOpen]);
 
   const goBack = () => history.goBack();
+  const goRecord = () => history.push('/viewrecord');
+
   return (
     <MainPageBlock>
       <HeadBlock>
@@ -261,7 +264,7 @@ function CollectMain({ history }) {
               <img src={Exit} alt="ExitBtn" className="ExitBtn" />
             </ExitBtn>
           </BtnsDiv>
-          <ItemDiv>
+          <ItemDiv onClick={goRecord}>
             {item.slice(0, 4).map((a, i) => {
               return <Collection item={item[i]} i={i} key={i} />;
             })}

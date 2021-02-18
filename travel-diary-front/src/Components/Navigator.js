@@ -41,8 +41,8 @@ function Navigator() {
   return (
     <NavigatorBlock>
       <button className="home">홈</button>
-      <button className="write">기록적기</button>
-      <button className="see">기록보기</button>
+      <button className="write">모아보기</button>
+      <button className="see">기록하기</button>
       <button className="myPage">마이페이지</button>
     </NavigatorBlock>
   );
