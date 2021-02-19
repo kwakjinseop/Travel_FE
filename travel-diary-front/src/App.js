@@ -7,6 +7,7 @@ import CollectMain from './Components/Collection/CollectMain';
 import CollectDetail from './Components/Collection/CollectDetail';
 import ViewRecord from './Components/Record/ViewRecord';
 import SelectArea from './Components/SelectArea';
+import RecordPage from './Components/RecordPage/RecordPage';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/collection" component={CollectMain} />
         <Route path="/detail" component={CollectDetail} />
         <Route path="/viewrecord" component={ViewRecord} />
+        <Route path="/record" component={RecordPage} />
       </BrowserRouter>
     </>
   );

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import thunk from 'redux-thunk';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'semantic-ui-css/semantic.min.css';
 
 
 // const store = createStore(reducers, applyMiddleware(thunk));
